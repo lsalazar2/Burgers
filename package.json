@@ -1,0 +1,28 @@
+{
+  "name": "Burgers",
+  "version": "1.0.0",
+  "description": "Burger Maker using Node with MYSQL &amp; ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsalazar2/Burgers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lsalazar2/Burgers/issues"
+  },
+  "homepage": "https://github.com/lsalazar2/Burgers#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
