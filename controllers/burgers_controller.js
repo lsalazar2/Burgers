@@ -15,6 +15,7 @@ router.get("/", function(req, res) {
   });
 });
 
+
 router.post("/burgers", function(req, res) {
   burger.create([
     "name", "devoured"
@@ -25,6 +26,7 @@ router.post("/burgers", function(req, res) {
     res.json({ id: result.insertId });
   });
 });
+
 
 router.put("/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
