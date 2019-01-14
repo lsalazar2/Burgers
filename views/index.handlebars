@@ -1,0 +1,67 @@
+
+
+<h1>Eat-Da-Burger!</h1>
+
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div>
+                <button class="burgerAvailable" data-id="{{this.id}}">
+		        {{this.burger_name}}
+	            </button>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class="col s6">
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div class='burgerEaten'>
+              <div>
+                {{this.burger_name}}
+              </div>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</main>
+
+<h2>Add A Burger</h2>
+
+<div class="row">
+  <div class="col s12">
+    <form action="/burgers" method="POST">
+      <input type="text" id="name" name="burger_name" placeholder=" Yummy Burger">
+      <button type="submit" class="addBurgerButton">Add Burger</button>
+    </form>
+  </div>
+</div>
+<script>
+
+$(".burgerAvailable").on("click", function(event) {
+    var id = $(this).data("id");
+    console.log("devoured");
+
+    var newDevoured = {
+      devoured: true
+    };
+
+    // Send the PUT request.
+    $.ajax("/burgers/" + id, {
+      type: "PUT",
+      data: newDevoured
+    }).then(
+      function() {
+        console.log("changed devoured to", newDevoured);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+});
+</script>
