@@ -1,3 +1,5 @@
+
+
 <h1>Eat-Da-Burger!</h1>
 
 <main>
@@ -40,3 +42,27 @@
     </form>
   </div>
 </div>
+<script>
+
+$("#devoured").on("click", function(event) {
+    var id = $(this).data("id");
+    var  eaten = $(this).data("newdevoured");
+    console.log("devoured submitted";)
+
+    var newDevoured = {
+      devoured: true
+    };
+
+    // Send the PUT request.
+    $.ajax("/burgers/" + id, {
+      type: "PUT",
+      data: newDevoured
+    }).then(
+      function() {
+        console.log("changed devoured to", newDevoured);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+</script>
