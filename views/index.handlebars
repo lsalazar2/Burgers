@@ -9,9 +9,9 @@
         {{#each burgers}}
           {{#unless this.devoured}}
             <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
-              </form>
+                <button class="burgerAvailable" data-id="{{this.id}}">
+		        {{this.burger_name}}
+	            </button>
             </div>
           {{/unless}}
         {{/each}}
@@ -44,10 +44,9 @@
 </div>
 <script>
 
-$("#devoured").on("click", function(event) {
+$(".burgerAvailable").on("click", function(event) {
     var id = $(this).data("id");
-    var  eaten = $(this).data("newdevoured");
-    console.log("devoured submitted";)
+    console.log("devoured");
 
     var newDevoured = {
       devoured: true
@@ -64,5 +63,5 @@ $("#devoured").on("click", function(event) {
         location.reload();
       }
     );
-  });
+});
 </script>

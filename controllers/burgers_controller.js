@@ -33,7 +33,7 @@ router.put("/burgers/:id", function(req, res) {
   burger.update({
     devoured: true
   }, condition, function(data) {
-    res.redirect('/');
+    res.status(200).end();
   });
 });
 
