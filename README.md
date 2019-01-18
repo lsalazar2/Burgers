@@ -23,11 +23,21 @@ Next, install the application dependencies.
 
 	cd burgers
 	npm install
-	
-Finally, run the node server locally.
 
-	node server
-	
-Now, open the local application on port 8080 at the URL: `http://localhost:8080/`.
+Now run the node server locally.
 
-**Enjoy and have a sequel burger!**
+node server
+
+Now, open the local application on port 3000 at the URL: http://localhost:3306/.
+
+Enjoy and have a burger!
+Running Locally
+To run the application locally and access it in your browser, first set the PORT environment variable to the value of your choice. An example is shown below.
+
+export PORT=3030
+After the PORT environment variable has been set, run the Node.js application with the command below.
+
+node server.js
+The application will now be running locally on PORT, in this case that is port 3030. You can then access it locally from your browser at the URL localhost:PORT, in this case localhost:3030.
+
+**Enjoy and have a awesome burger!**
